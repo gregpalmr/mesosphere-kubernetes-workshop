@@ -14,7 +14,7 @@ Click in the dialogue box too copy the command
 
 Paste that command into your Terminal and press enter
 
-***For CoreOS*** use the following commands to install the CLI binary:
+For CoreOS use the following commands to install the CLI binary:
 
 ```
 sudo mkdir -p /opt/bin && 
@@ -202,7 +202,7 @@ Install the Kubernetes command line by following instructions [here](https://kub
 brew install kubectl
 ```
 
-** For CoreOS the commands are:**
+**For CoreOS** the commands are:
 ```
 curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
 chmod +x kubectl
