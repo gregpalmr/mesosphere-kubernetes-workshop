@@ -53,7 +53,9 @@ Your instructor will give you a tour of DC/OS UI and catalog.
 
 To launch a Kubernetes cluster, you must first deploy the Mesosphere Kubernetes Control Plane Manager. 
 
-Step 3.a Install the Kubernetes Control Plane Manager with the following command:
+## Step 3.a 
+
+Install the Kubernetes Control Plane Manager with the following command:
 
 dcos package install kubernetes --yes
 
@@ -82,7 +84,9 @@ When all steps are "COMPLETE", confirm that the "dcos kubernetes" CLI was instal
 dcos kubernetes --help
 ```
 
-Step 3.b Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster.  Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
+## Step 3.b 
+
+Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster.  Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
 
 Run the following commands to create the SSL keys, the service account and the secret.
 
