@@ -2,7 +2,7 @@
 
 The instructor will give you access to IP address and credentials that you will need to SSH into.
 
-### Set Up DC/OS Command Line
+### Step 1. Set Up DC/OS Command Line
 
 Set up the DC/OS command line by clicking on the top left and choosing "install CLI"
 
@@ -33,6 +33,7 @@ Once the CLI is installed, confirm that it is installed correctly and connected 
 
 ```
 dcos node
+
 ```
 
 The output should be a list of nodes in the cluster
@@ -44,15 +45,15 @@ The output should be a list of nodes in the cluster
   10.0.2.100   10.0.2.100  94141db5-28df-4194-a1f2-4378214838a7-S4   agent            aws/us-west-2  aws/us-west-2a
 ```
 
-### Tour DC/OS Catalog
+### Step 2. Tour DC/OS Catalog
 
 Your instructor will give you a tour of DC/OS UI and catalog. 
 
-### Launch a Kubernetes Cluster 
+### Step 3. Launch a Kubernetes Cluster 
 
 To launch a Kubernetes cluster, you must first deploy the Mesosphere Kubernetes Control Plane Manager. 
 
-Install the Kubernetes Control Plane Manager with the following command:
+Step 3.a Install the Kubernetes Control Plane Manager with the following command:
 
 dcos package install kubernetes --yes
 
@@ -63,6 +64,7 @@ Installing Marathon app for package [kubernetes] version [2.0.0-1.12.1]
 Installing CLI subcommand for package [kubernetes] version [2.0.0-1.12.1]
 New command available: dcos kubernetes
 The Mesosphere Kubernetes Engine service is being installed.
+```
 
 You can check to see if the control manager is installed completely by running the following command:
 
@@ -80,7 +82,7 @@ When all steps are "COMPLETE", confirm that the "dcos kubernetes" CLI was instal
 dcos kubernetes --help
 ```
 
-Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster.  Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
+Step 3.b Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster.  Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
 
 Run the following commands to create the SSL keys, the service account and the secret.
 
@@ -186,7 +188,7 @@ deploy (serial strategy) (COMPLETE)
 
 ```
 
-### Install Kubernetes kubectl Command Line
+### Step 4. Install Kubernetes kubectl Command Line
 
 Install the Kubernetes command line by following instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
