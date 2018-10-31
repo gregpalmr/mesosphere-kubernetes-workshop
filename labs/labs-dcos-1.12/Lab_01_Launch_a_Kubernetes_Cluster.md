@@ -126,6 +126,7 @@ dcos security org users grant kubernetes-cluster1  dcos:mesos:agent:framework:ro
 
 Use the service account and secret when you launch a Kubernetes cluster.  Run the following command to setup a package installer options file that references the service account and secret.
 
+```
 cat > cluster1-options.json << EOF
 {
   "service": {
@@ -135,6 +136,7 @@ cat > cluster1-options.json << EOF
   }
 }
 EOF
+```
 
 Then run the DC/OS Kubernetes CLI command to launch the Kubernetes cluster.
 
@@ -210,6 +212,13 @@ sudo mkdir -p /opt/bin
 sudo mv kubectl /opt/bin/kubectl
 ```
 
+**For Red Red or CentOS** the commands are:
+```
+curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
+chmod +x kubectl
+sudo mkdir -p /usr/local/bin
+sudo mv kubectl /usr/local/bin/kubectl
+```
 
 **For Ubuntu** the commands are:
 
