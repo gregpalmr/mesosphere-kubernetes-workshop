@@ -1,13 +1,18 @@
 # LAB 2 - Connecting kubectl to DC/OS
 
-## Step 1. Deploy the DC/OS Marathon-LB HAPROXY based load balancer:
+### Step 1. Deploy the DC/OS Marathon-LB HAPROXY based load balancer
+
+Run the command to install Marathon-LB:
+
 ```
 dcos package install marathon-lb --yes
 ```
 
-## Step 2. Launch a proxy service on DC/OS for exposing the Kubernetes API Server port.
+### Step 2. Launch a proxy service on DC/OS
 
-## Step 2.a
+Launch a proxy service on DC/OS to expose the Kubernetes API Server port.
+
+### Step 2.a
 
 Create a kubectl-proxy service specification file:
 ```
@@ -38,7 +43,7 @@ cat <<EOF > cluster1-kubectl-proxy.json
 EOF
 ```
 
-## Step 2.b 
+### Step 2.b 
 
 Deploy the cluster1-kubectl-proxy service with the command:
 ```
@@ -55,7 +60,7 @@ Here is how this works:
 * The last label HAPROXY_0_BACKEND_SERVER_OPTIONS indicates that Marathon-LB should forward traffic to the endpoint apiserver.kubernetes-cluster1.l4lb.thisdcos.directory:6443 rather than to the dummy application, and that the connection should be made using TLS without verification.
 
 
-## Step 3. Find public IP address of Public DC/OS Node
+### Step 3. Find public IP address of Public DC/OS Node
 
 Find the public IP address of the Public DC/OS node that is running the Marathon-LB load balancer. Run the following command (make sure Marathon-LB is running first, with the command 'dcos task marathon-lb'):
 
@@ -63,9 +68,9 @@ Find the public IP address of the Public DC/OS node that is running the Marathon
 MARATHON_PUB_IP=$(priv_ip=$(dcos task marathon-lb | grep -v HOST | awk '{print $2}') && dcos node ssh --option StrictHostKeyChecking=no --option LogLevel=quiet --master-proxy --private-ip=$priv_ip "curl -s ifconfig.co | sed 's/\r//g'"); echo && echo "MARATHON_PUB_IP:   $MARATHON_PUB_IP"
 ```
 
-## Step 4. Connecting using Kubeconfig
+### Step 4. Connecting using Kubeconfig
 
-## Step 4.a 
+### Step 4.a 
 
 Configure kubectl to connect to the Kubernetes cluster running on  DC/OS using the following commands:
 ```
@@ -76,7 +81,7 @@ dcos kubernetes cluster kubeconfig \
     --apiserver-url=https://${MARATHON_PUB_IP}:6443
 ```
 
-## Step 4.b
+### Step 4.b
 
 Confirm connection:
 
@@ -84,7 +89,7 @@ Confirm connection:
 kubectl get nodes
 ```
 
-## Step 5. Kubernetes Dashboard (Official UI of Kubernetes)
+### Step 5. Kubernetes Dashboard (Official UI of Kubernetes)
 
 (NOTE: if you are using a bootstrap server to access your cluster then the local proxy will not give you access to the Dashboard.)
 
@@ -100,7 +105,7 @@ Point your browser to:
 http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/
 ```
 
-## Step 6. Switching Clusters using kubectl
+### Step 6. Switching Clusters using kubectl
 
 To get your contexts, use the command:
 
