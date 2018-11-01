@@ -4,6 +4,21 @@ The instructor will give you access to IP address and credentials that you will 
 
 ### Step 1. Set Up DC/OS Command Line
 
+### Step 1.a
+
+If you have a Macbook or Linux laptop and you don't have any restrictions on accessing servers on the internet, you can use the instructions in Step 1.b on your laptop. If you don't then you should login to your cluster's "bootstrap" server and use it as a command line client.
+
+Download the id_rsa key from the workshop cluster github location at:
+
+https://github.com/gregpalmr/mesosphere-kubernetes-workshop/clusters/Workshop-Clusters-YYYY-MM-DD/keys/id_rsa
+
+SSH to the bootstrap server:
+```
+ssh -i ./id_rsa centos@<your bootstrap server ip address>
+```
+
+### Step 1.b
+
 Set up the DC/OS command line by clicking on the top left and choosing "install CLI"
 
 ![CLI](https://i.imgur.com/p4kqIj6.png)

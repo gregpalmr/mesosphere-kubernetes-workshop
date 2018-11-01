@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-charlie-1
+
+[cluster-address]
+nyc-dcos-charlie-1-75010138.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+34.230.16.139
+
+[masters]
+18.234.183.208
+
+[private-agents]
+18.209.94.253
+35.153.156.143
+34.239.129.81
+34.236.146.253
+54.236.17.220
+100.24.126.26
+
+[public-agents]
+54.173.30.72
+34.201.18.204
+
+[public-agent-lb]
+ext-nyc-dcos-charlie-1-274176590.us-east-1.elb.amazonaws.com
+

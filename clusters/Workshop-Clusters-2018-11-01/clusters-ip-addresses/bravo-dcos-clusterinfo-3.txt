@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-bravo-3
+
+[cluster-address]
+nyc-dcos-bravo-3-368631416.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+54.196.117.9
+
+[masters]
+54.146.111.71
+
+[private-agents]
+52.91.108.215
+34.200.250.12
+18.234.241.1
+54.158.242.128
+35.175.65.229
+35.172.203.43
+
+[public-agents]
+52.55.31.94
+34.238.27.228
+
+[public-agent-lb]
+ext-nyc-dcos-bravo-3-29427109.us-east-1.elb.amazonaws.com
+

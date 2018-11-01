@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-echo-2
+
+[cluster-address]
+nyc-dcos-echo-2-1174740586.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+34.230.69.245
+
+[masters]
+18.232.142.132
+
+[private-agents]
+18.209.28.82
+35.173.1.31
+18.206.249.101
+34.235.138.156
+54.236.47.30
+35.175.112.140
+
+[public-agents]
+54.172.201.16
+34.200.246.70
+
+[public-agent-lb]
+ext-nyc-dcos-echo-2-648936602.us-east-1.elb.amazonaws.com
+

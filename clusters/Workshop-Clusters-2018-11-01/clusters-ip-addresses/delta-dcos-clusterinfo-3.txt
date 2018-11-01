@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-delta-3
+
+[cluster-address]
+nyc-dcos-delta-3-389398384.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+35.173.190.212
+
+[masters]
+34.207.204.221
+
+[private-agents]
+52.203.131.75
+18.214.16.145
+35.175.153.202
+54.152.142.109
+52.91.153.86
+35.173.215.14
+
+[public-agents]
+54.85.113.163
+18.215.187.226
+
+[public-agent-lb]
+ext-nyc-dcos-delta-3-896623565.us-east-1.elb.amazonaws.com
+

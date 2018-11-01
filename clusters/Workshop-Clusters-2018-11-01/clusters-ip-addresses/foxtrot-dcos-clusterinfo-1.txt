@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-foxtrot-1
+
+[cluster-address]
+nyc-dcos-foxtrot-1-128108830.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+34.230.16.224
+
+[masters]
+54.174.211.204
+
+[private-agents]
+52.200.58.108
+18.234.247.66
+100.24.53.132
+54.159.123.215
+34.239.207.155
+34.229.131.16
+
+[public-agents]
+54.157.23.224
+34.234.236.252
+
+[public-agent-lb]
+ext-nyc-dcos-foxtrot-1-702032891.us-east-1.elb.amazonaws.com
+
