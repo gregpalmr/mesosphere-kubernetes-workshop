@@ -102,7 +102,7 @@ kubectl proxy
 Point your browser to:
 
 ```
-http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/
+http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 ```
 
 ### Step 6. Switching Clusters using kubectl
