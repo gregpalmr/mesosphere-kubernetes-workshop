@@ -163,7 +163,9 @@ EOF
 
 Then run the DC/OS Kubernetes CLI command to launch the Kubernetes cluster.
 
+```
 dcos kubernetes cluster create --options=cluster1-options.json --yes
+```
 
 ```
 By Deploying, you agree to the Terms and Conditions https://mesosphere.com/catalog-terms-conditions/#certified-services
