@@ -1,4 +1,4 @@
-# Lab 1 Launch a Kubernetes  Cluster
+# Lab 1 Launch a Kubernetes Cluster
 
 The instructor will give you access to IP address and credentials that you will need to SSH into.
 
@@ -14,15 +14,14 @@ SSH Key
 https://raw.githubusercontent.com/gregpalmr/mesosphere-kubernetes-workshop/master/clusters/Workshop-Clusters-2018-11-01/keys/id_rsa
 
 SSH to the bootstrap server:
+
 ```
 ssh -i ./id_rsa centos@<your bootstrap server ip address>
 ```
 
-If using Windows and Putty Telnet, use the putty key at:  
+If using Windows and Putty Telnet, use the putty key at:
 
 https://raw.githubusercontent.com/gregpalmr/mesosphere-kubernetes-workshop/master/clusters/Workshop-Clusters-2018-11-01/keys/puttykey.ppk
-
-
 
 ### Step 1.b
 
@@ -39,8 +38,8 @@ Paste that command into your Terminal and press enter
 For CoreOS use the following commands to install the CLI binary:
 
 ```
-sudo mkdir -p /opt/bin && 
-curl https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.12/dcos -o dcos && 
+sudo mkdir -p /opt/bin &&
+curl https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.12/dcos -o dcos &&
 chmod +x dcos &&
 sudo mv dcos /opt/bin
 
@@ -55,31 +54,31 @@ Once the CLI is installed, confirm that it is installed correctly and connected 
 
 ```
 dcos node
-
 ```
 
 The output should be a list of nodes in the cluster
 
 ```
-
-   HOSTNAME        IP                         ID                     TYPE                 REGION          ZONE       
-  10.0.0.101   10.0.0.101  94141db5-28df-4194-a1f2-4378214838a7-S0   agent            aws/us-west-2  aws/us-west-2a  
+   HOSTNAME        IP                         ID                     TYPE                 REGION          ZONE
+  10.0.0.101   10.0.0.101  94141db5-28df-4194-a1f2-4378214838a7-S0   agent            aws/us-west-2  aws/us-west-2a
   10.0.2.100   10.0.2.100  94141db5-28df-4194-a1f2-4378214838a7-S4   agent            aws/us-west-2  aws/us-west-2a
 ```
 
 ### Step 2. Tour DC/OS Catalog
 
-Your instructor will give you a tour of DC/OS UI and catalog. 
+Your instructor will give you a tour of DC/OS UI and catalog.
 
-### Step 3. Launch a Kubernetes Cluster 
+### Step 3. Launch a Kubernetes Cluster
 
-To launch a Kubernetes cluster, you must first deploy the Mesosphere Kubernetes Control Plane Manager. 
+To launch a Kubernetes cluster, you must first deploy the Mesosphere Kubernetes Control Plane Manager.
 
-### Step 3.a 
+### Step 3.a
 
 Install the Kubernetes Control Plane Manager with the following command:
 
+```
 dcos package install kubernetes --yes
+```
 
 ```
 By Deploying, you agree to the Terms and Conditions https://mesosphere.com/catalog-terms-conditions/#certified-services
@@ -92,7 +91,9 @@ The Mesosphere Kubernetes Engine service is being installed.
 
 You can check to see if the control manager is installed completely by running the following command:
 
+```
 dcos kubernetes manager plan status deploy
+```
 
 ```
 deploy (serial strategy) (COMPLETE)
@@ -106,9 +107,9 @@ When all steps are "COMPLETE", confirm that the "dcos kubernetes" CLI was instal
 dcos kubernetes --help
 ```
 
-### Step 3.b 
+### Step 3.b
 
-Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster.  Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
+Once the Kubernetes control plan manager is running, you can use it to launch a Kubernetes cluster. Since you are using the Enterprise version of DC/OS, you can use the DC/OS certificate authoritity to create an SSL key to be used with a DC/OS service account user.
 
 Run the following commands to create the SSL keys, the service account and the secret.
 
@@ -146,7 +147,7 @@ dcos security org users grant kubernetes-cluster1  dcos:mesos:master:framework:r
 dcos security org users grant kubernetes-cluster1  dcos:mesos:agent:framework:role:slave_public read
 ```
 
-Use the service account and secret when you launch a Kubernetes cluster.  Run the following command to setup a package installer options file that references the service account and secret.
+Use the service account and secret when you launch a Kubernetes cluster. Run the following command to setup a package installer options file that references the service account and secret.
 
 ```
 cat > cluster1-options.json << EOF
@@ -181,6 +182,7 @@ You can see the installation runbook automation and status of installation of ea
 ```
 dcos kubernetes manager plan status deploy --name=kubernetes-cluster1
 ```
+
 First it will show some Kubernetes components completed, and some started or pending like this:
 
 ```
@@ -213,7 +215,6 @@ deploy (serial strategy) (COMPLETE)
 ├─ node (dependency strategy) (COMPLETE)
 │  └─ kube-node-0:[kubelet] (COMPLETE)
 └─ public-node (dependency strategy) (COMPLETE)
-
 ```
 
 ### Step 4. Install Kubernetes kubectl Command Line
@@ -227,6 +228,7 @@ brew install kubectl
 ```
 
 **For CoreOS** the commands are:
+
 ```
 curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
 chmod +x kubectl
@@ -235,6 +237,7 @@ sudo mv kubectl /opt/bin/kubectl
 ```
 
 **For Red Red or CentOS** the commands are:
+
 ```
 curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
 chmod +x kubectl
@@ -247,7 +250,7 @@ sudo mv kubectl /usr/local/bin/kubectl
 ```
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo touch /etc/apt/sources.list.d/kubernetes.list 
+sudo touch /etc/apt/sources.list.d/kubernetes.list
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubectl
@@ -259,7 +262,4 @@ Confirm that kubectl is installed and in path /usr/local/bin (it will say it is 
 kubectl version
 ```
 
-
------------
-
-
+---
