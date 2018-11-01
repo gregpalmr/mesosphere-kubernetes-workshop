@@ -1,0 +1,31 @@
+
+[cluster]
+nyc-dcos-alpha-4
+
+[cluster-address]
+nyc-dcos-alpha-4-1200865903.us-east-1.elb.amazonaws.com
+
+User: bootstrapuser
+Pass: deleteme
+
+[bootstrap]
+54.165.194.224
+
+[masters]
+34.228.228.134
+
+[private-agents]
+34.229.245.86
+54.236.55.107
+100.26.109.141
+35.172.225.29
+107.22.142.64
+34.204.183.181
+
+[public-agents]
+35.174.12.140
+34.200.228.20
+
+[public-agent-lb]
+ext-nyc-dcos-alpha-4-159129622.us-east-1.elb.amazonaws.com
+
