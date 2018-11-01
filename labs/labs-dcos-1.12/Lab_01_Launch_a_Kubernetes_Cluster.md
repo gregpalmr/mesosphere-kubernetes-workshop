@@ -10,12 +10,19 @@ If you have a Macbook or Linux laptop and you don't have any restrictions on acc
 
 Download the id_rsa key from the workshop cluster github location at:
 
+SSH Key
 https://raw.githubusercontent.com/gregpalmr/mesosphere-kubernetes-workshop/master/clusters/Workshop-Clusters-2018-11-01/keys/id_rsa
 
 SSH to the bootstrap server:
 ```
 ssh -i ./id_rsa centos@<your bootstrap server ip address>
 ```
+
+If using Windows and Putty Telnet, use the putty key at:  
+
+https://raw.githubusercontent.com/gregpalmr/mesosphere-kubernetes-workshop/master/clusters/Workshop-Clusters-2018-11-01/keys/puttykey.ppk
+
+
 
 ### Step 1.b
 
